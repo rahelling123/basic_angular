@@ -12,9 +12,9 @@ class DogList(APIView):
     queryset = Dog.objects.all()
     serializer_class = DogSerializer
 
-    def get(self, request):
-        dogs = Dog.objects.all()
-        return Response(dogs)
+    # def get(self, request):
+    #     dogs = Dog.objects.all()
+    #     return Response(dogs)
 
 
 def index(APIView):

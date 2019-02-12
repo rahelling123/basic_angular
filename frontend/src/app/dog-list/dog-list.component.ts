@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Observable} from "rxjs/index";
 import {Dog} from '../dog'
 import { ApiService } from '../api.service'
+import {interval} from "rxjs/index";
 
 
 @Component({
@@ -17,6 +18,10 @@ export class DogListComponent implements OnInit {
 
   ngOnInit() {
       this.currentDogs = this.service.getDogs()
+      const interval$ = interval(1000);
+      interval$.subscribe(val => console.log("stream 1" + val))
+      this.currentDogs.subscribe(dog => console.log(dog))
+      //console.log(this.currentDogs)
   }
 
 }
