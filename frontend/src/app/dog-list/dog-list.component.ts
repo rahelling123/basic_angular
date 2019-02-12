@@ -21,7 +21,7 @@ export class DogListComponent implements OnInit {
       const interval$ = interval(1000);
       interval$.subscribe(val => console.log("stream 1" + val))
       this.currentDogs.subscribe(dog => console.log(dog))
-      //console.log(this.currentDogs)
+      console.log(this.currentDogs)
   }
 
 }
