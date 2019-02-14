@@ -9,7 +9,7 @@ import { ApiService } from './api.service'
 })
 export class AppComponent {
 
-  title = 'frontend';
+  title = 'Dog List Tutorial';
 
   constructor(private apiService:ApiService){}
 }

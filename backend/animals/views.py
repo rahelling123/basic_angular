@@ -14,7 +14,7 @@ class DogDetailDjango(DetailView):
     serializer_class = DogSerializer
 
     def get(self, queryset=None):
-        return Dog.objects.filter(pk=1)
+        return Dog.objects.filter(pk=2)
 
 # class DogDetail(APIView):
 

@@ -1,10 +1,12 @@
-<p>
-  dog-list works!
-
-  {{currentDogs}}
-
-<!--<li *ngFor="let dog of currentDogs">-->
-    <!--{{dog.name}}-->
+  <h2>dog-list works!</h2>
 
 
-</p>
+    <ul>
+        <li *ngFor = "let dog of customdogs" (click)="onSelect(hero)">
+            {{ dog.name }}
+        </li>
+    </ul>
+
+
+
+

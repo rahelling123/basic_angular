@@ -13,7 +13,11 @@ export class ApiService {
 
   constructor(private httpClient: HttpClient) { }
 
-  public getDogs(){
+  public getDogs() {
     return this.httpClient.get<Dog[]>(`${this.apiURL}/dogs`);
+  }
+
+  public getDogDetail(){
+    return this.httpClient.get<Dog[]>(`${this.apiURL}/dogdetail`);
 }
 }
