@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from "@angular/common/http"
+import { HttpClient, HttpHeaders } from "@angular/common/http"
 import { DogListComponent } from './dog-list/dog-list.component';
 import { Dog } from './dog'
+import { Observable, of } from 'rxjs'
 
 
 @Injectable({
@@ -17,7 +18,7 @@ export class ApiService {
     return this.httpClient.get<Dog[]>(`${this.apiURL}/dogs`);
   }
 
-  public getDogDetail(){
-    return this.httpClient.get<Dog[]>(`${this.apiURL}/dogdetail`);
+  public getDogDetail(): Observable<Dog[]> {
+    return this.httpClient.get<Dog>(`${this.apiURL}/1/dogdetail`);
 }
 }

@@ -18,8 +18,8 @@ export class DogListComponent implements OnInit {
 
   customdogs = CustomDogs;
 
-  selectedDog: Dog;
-  onSelect(dog:Dog): void {
+    selectedDog: Dog;
+    onSelect(dog:Dog): void {
     this.selectedDog = dog
   }
 
@@ -30,9 +30,12 @@ export class DogListComponent implements OnInit {
 
       this.currentDogs = this.service.getDogs()
       const interval$ = interval(1000);
+
       interval$.subscribe(val => console.log("stream 1" + val))
       this.currentDogs.subscribe(dog => console.log(dog))
+
       console.log(this.currentDogs)
+
   }
 
 }

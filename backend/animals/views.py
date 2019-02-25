@@ -12,9 +12,18 @@ from .serializers import DogSerializer
 class DogDetailDjango(DetailView):
     model = Dog
     serializer_class = DogSerializer
+    template_name = 'detail.html'
 
-    def get(self, queryset=None):
-        return Dog.objects.filter(pk=2)
+    # def get(self, queryset=None):
+    #     dog_instance = Dog.objects.filter(pk=1)
+    #     return dog_instance
+
+
+def dogdetailmethod(request):
+    serializer_class = DogSerializer
+    dog_instance = Dog.objects.filter(pk=1)
+    return HttpResponse(dog_instance)
+
 
 # class DogDetail(APIView):
 

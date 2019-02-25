@@ -2,19 +2,22 @@
 <br>
 
 dogdetail works!
+{{ dogdetail }}
 
     <h1>{{ dog.name }} </h1>
     <h1>{{ dog.location }} </h1>
+    <h1>{{ dogdetail.name }} </h1>
+
 
     <div>
     <label>name:
-    <input [(ngModel)]="dog.name" placeholder="name"><br><br>
-    <input [(ngModel)]="dog.location" placeholder="what does this do?">
-
+        <input [(ngModel)]="dog.name" placeholder="name"><br><br>
+    </label>
+    <label>location:
+        <input [(ngModel)]="dog.location" placeholder="what does this do?">
     </label>
     </div>
 
 
 
 
-other stuff

@@ -11,15 +11,22 @@ import { Dog } from '../dog'
 
 export class DogdetailComponent implements OnInit {
 
-  constructor() { }
-    dog: Dog
-    dog = 'best dog ever'
-      dog: Dog = {
-      name: 'good dog',
-      location: 'wherever'
-    };
-  ngOnInit() {
+  dogdetail : Dog[];
 
+  constructor(private apiservice: ApiService) { }
+    //  dog: Dog = {
+    //  name: 'good dog',
+    //  location: 'wherever'
+    //}
+
+
+  ngOnInit() {
+    this.getDog();
+  }
+
+    getDog(): void {
+      this.apiservice.getDogDetail().subscribe(dogdetail=> this.dogdetail = dogdetail)
+      console.log('got the data i guess');
   }
 
 }
